@@ -257,7 +257,7 @@ namespace Newtonsoft.Json.Converters
             bool isNullable = ReflectionUtils.IsNullableType(objectType);
             Type t = isNullable ? Nullable.GetUnderlyingType(objectType) : objectType;
 
-            if (!t.IsEnum)
+            if (!t.IsEnum())
                 return null;
 
             JsonSchema schema = new JsonSchema();
