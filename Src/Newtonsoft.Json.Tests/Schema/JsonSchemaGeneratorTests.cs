@@ -763,7 +763,7 @@ namespace Newtonsoft.Json.Tests.Schema
 }", json);
         }
 
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonConverter(typeof(StringEnumConverter), true)]
         public enum SortTypeFlagAsString
         {
             No = 0,
@@ -778,7 +778,6 @@ namespace Newtonsoft.Json.Tests.Schema
 
 #if !ASPNETCORE50
         [Test]
-        [Ignore]
         public void GenerateSchemaWithStringEnum()
         {
             JsonSchemaGenerator jsonSchemaGenerator = new JsonSchemaGenerator();
